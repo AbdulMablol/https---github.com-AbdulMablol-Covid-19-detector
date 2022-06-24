@@ -13,7 +13,7 @@ class Body extends StatelessWidget {
           ProfilePic(),
           SizedBox(height: 20),
           Text(
-            'Naglaa Samra',
+            'Basel Ashraf',
             style: TextStyle(fontSize: 25),
           ),
           SizedBox(height: 20),

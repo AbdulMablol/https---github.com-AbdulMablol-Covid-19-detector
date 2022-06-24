@@ -18,7 +18,7 @@ class ProfilePic extends StatelessWidget {
         overflow: Overflow.visible,
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage("assets/images/naglaa.png"),
+            backgroundImage: AssetImage("assets/images/basel.png"),
           ),
           Positioned(
             right: -16,

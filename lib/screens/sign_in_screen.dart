@@ -172,11 +172,14 @@ class _SignFormState extends State<SignForm> {
           DefaultButton(
             text: "Continue",
             press: () {
-              KeyboardUtil.hideKeyboard(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => BottomNavScreen()),
-              );
+              if (_formKey.currentState.validate() && selectedRadioTile == 0) {
+                _formKey.currentState.save();
+                KeyboardUtil.hideKeyboard(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BottomNavScreen()),
+                );
+              }
             },
           ),
         ],

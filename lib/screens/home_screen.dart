@@ -207,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 FlatButton.icon(
                   padding: const EdgeInsets.symmetric(
                     vertical: 10.0,
-                    horizontal: 0.0,
+                    horizontal: 10.0,
                   ),
                   onPressed: () {
                     Navigator.push(
