@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'COVID-19 detector',
+                  'MYDET',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 29.0,

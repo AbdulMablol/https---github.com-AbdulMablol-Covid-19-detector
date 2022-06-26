@@ -9,14 +9,16 @@ class DefaultButton extends StatelessWidget {
     Key key,
     this.text,
     this.press,
+    this.width = double.infinity,
   }) : super(key: key);
   final String text;
   final Function press;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: width,
       height: getProportionateScreenHeight(56),
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
