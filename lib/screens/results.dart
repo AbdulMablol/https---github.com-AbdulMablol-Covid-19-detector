@@ -3,6 +3,7 @@ import 'package:flutter_covid_dashboard_ui/components/default_button.dart';
 import 'package:flutter_covid_dashboard_ui/config/palette.dart';
 import 'package:flutter_covid_dashboard_ui/data/data.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter_covid_dashboard_ui/screens/pcr.dart';
 
 import '../size_config.dart';
 
@@ -24,11 +25,16 @@ class _ResultsScreenState extends State<ResultsScreen> {
   }
 
   void positive() {
-    usercontroller.text == 'ATHKM6V' || usercontroller.text == 'AJMQUVV'
+    usercontroller.text == 'ATHKM6V' ||
+            usercontroller.text == 'AJMQUVV' ||
+            usercontroller.text == '1'
         ? result = 'Positive'
-        : usercontroller.text == 'A4H7SNF' || usercontroller.text == 'A2P3LTM'
+        : usercontroller.text == 'A4H7SNF' ||
+                usercontroller.text == 'A2P3LTM' ||
+                usercontroller.text == '2'
             ? result = 'Negative'
-            : print(usercontroller.text);
+            : result = 'Invalid code';
+    print(usercontroller.text);
     print(result);
     setState(() {});
   }
@@ -109,14 +115,19 @@ class _ResultsScreenState extends State<ResultsScreen> {
                           style: TextStyle(
                               fontSize: 22.5,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                              color: result == 'Positive'
+                                  ? Color.fromARGB(255, 228, 56, 74)
+                                  : result == 'Negative'
+                                      ? Colors.green
+                                      : Colors.white),
                         ),
 
                         // SizedBox(
                         //   width: 150,
                         //   child: AnimatedTextKit(
+                        //     key: ValueKey<String>(result),
                         //     animatedTexts: [
-                        //       TyperAnimatedText(
+                        //       ScaleAnimatedText(
                         //         result,
                         //         textStyle: TextStyle(
                         //           fontSize: 25,
@@ -124,10 +135,11 @@ class _ResultsScreenState extends State<ResultsScreen> {
                         //           fontWeight: FontWeight.bold,
                         //         ),
                         //         textAlign: TextAlign.center,
-                        //         speed: Duration(milliseconds: 100),
+                        //         duration: Duration(milliseconds: 2000),
+                        //         scalingFactor: 0.5,
                         //       ),
                         //     ],
-                        //     totalRepeatCount: 1,
+                        //     totalRepeatCount: 3,
                         //   ),
                         // ),
                       ],
@@ -165,6 +177,19 @@ class _ResultsScreenState extends State<ResultsScreen> {
                           ],
                         ))
                     .toList(),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 15, color: Colors.white),
+                  padding: EdgeInsets.only(left: 55),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Pcr()),
+                  );
+                },
+                child: const Text('See locations'),
               ),
             ],
           ),
