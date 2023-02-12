@@ -5,7 +5,7 @@
 
 ## Screens:
 Login screen
-![Login](https://user-images.githubusercontent.com/97244341/218289779-a3592712-b4a9-45c4-99cd-3b8a7f8138cd.jpg)
+&nbsp;&nbsp; &nbsp;![Login](https://user-images.githubusercontent.com/97244341/218289779-a3592712-b4a9-45c4-99cd-3b8a7f8138cd.jpg)
 Homepage
 ![Homepage](https://user-images.githubusercontent.com/97244341/218289783-6b42572f-ec4c-4f20-9cce-c7adf6905fb7.jpg)
 Statistics screen
